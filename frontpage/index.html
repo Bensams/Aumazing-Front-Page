@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Aumazing — Fun Learning for Kids with ASD</title>
+  <link rel="stylesheet" href="css/style2.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Fredoka+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="net-canvas" class="net-canvas" aria-hidden="true"></canvas>
+
+  <div class="bg-shapes" aria-hidden="true">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+    <div class="shape s6"></div>
+    <div class="shape s7"></div>
+    <div class="shape s8"></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="assets/images/Aumazing_Logo.png" alt="Aumazing Logo" class="nav-logo-img" />
+      <span>Aumazing</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#steps">How It Works</a></li>
+      <li><a href="#cta" class="nav-pill">Let's Go! 🚀</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="hero" id="hero">
+
+    <div class="hero-star hs1">⭐</div>
+    <div class="hero-star hs2">✨</div>
+    <div class="hero-star hs3">🌟</div>
+    <div class="hero-star hs4">💫</div>
+
+    <div class="hero-center">
+
+      <div class="hero-logo-wrap pop">
+        <img src="assets/images/Aumazing_Logo.png" alt="Aumazing Logo" class="hero-logo-img" />
+      </div>
+
+      <h1 class="hero-title pop">
+        <span class="block-letter b-cyan">A</span><span
+          class="block-letter b-yellow">u</span><span
+          class="block-letter b-pink">m</span><span
+          class="block-letter b-purple">a</span><span
+          class="block-letter b-green">z</span><span
+          class="block-letter b-orange">i</span><span
+          class="block-letter b-cyan">n</span><span
+          class="block-letter b-yellow">g</span>
+      </h1>
+
+      <div class="hero-tagline pop">
+        <div class="tag-block">🎮 Gamified Learning</div>
+        <div class="tag-block">🤖 AI-Powered</div>
+      </div>
+
+      <p class="hero-desc pop">
+        A <strong>fun 2D learning app</strong> that helps children aged
+        <strong>2 to 6</strong> with early-stage Autism Spectrum Disorder
+        grow, learn, and shine — one game at a time!
+      </p>
+
+      <div class="hero-btns pop">
+        <a href="#preview" class="btn-chunky btn-cyan">Watch Preview 🎬</a>
+        <a href="#features" class="btn-chunky btn-yellow">See Features ✨</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="preview-section" id="preview">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">App Preview</div>
+        <h2>See <span class="stroke-text">Aumazing</span> in Action!</h2>
+      </div>
+      <div class="video-showcase reveal">
+        <div class="video-frame">
+          <div class="vf-dot vd1"></div>
+          <div class="vf-dot vd2"></div>
+          <div class="vf-dot vd3"></div>
+          <video
+            src="assets/videos/Aumazing_Splash_Screen_Generation.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="preview-video"
+          ></video>
+        </div>
+        <div class="video-side">
+          <div class="vs-item reveal" style="--d:0.1s">
+            <div class="vs-icon vs-cyan">🎯</div>
+            <div>
+              <strong>Smart Assessment</strong>
+              <p>AI figures out your child's level through play</p>
+            </div>
+          </div>
+          <div class="vs-item reveal" style="--d:0.2s">
+            <div class="vs-icon vs-yellow">🏆</div>
+            <div>
+              <strong>Earn Rewards</strong>
+              <p>Stars and points keep kids motivated and engaged</p>
+            </div>
+          </div>
+          <div class="vs-item reveal" style="--d:0.3s">
+            <div class="vs-icon vs-pink">📈</div>
+            <div>
+              <strong>Track Progress</strong>
+              <p>Parents see real-time growth on the dashboard</p>
+            </div>
+          </div>
+          <div class="vs-item reveal" style="--d:0.4s">
+            <div class="vs-icon vs-purple">🎨</div>
+            <div>
+              <strong>Fun & Colorful</strong>
+              <p>Visual-first design built for children with ASD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">About the App</div>
+        <h2>What is <span class="stroke-text">Aumazing?</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-big-card reveal">
+          <div class="big-card-icon">🧩</div>
+          <h3>Bridging Home & Therapy</h3>
+          <p>
+            Aumazing helps parents guide their children with early-stage ASD
+            through structured, gamified activities at home — supplementing
+            professional therapy with daily, fun-filled learning.
+          </p>
+          <div class="about-tags">
+            <span>ABA-Based</span>
+            <span>TEACCH Approach</span>
+            <span>Visual Learning</span>
+          </div>
+        </div>
+
+        <div class="about-facts">
+          <div class="fact-block fb-cyan reveal" style="--d:0s">
+            <span class="fact-num">2–6</span>
+            <span class="fact-label">Target Age Group</span>
+          </div>
+          <div class="fact-block fb-yellow reveal" style="--d:0.1s">
+            <span class="fact-num">AI</span>
+            <span class="fact-label">XGBoost Analytics</span>
+          </div>
+          <div class="fact-block fb-pink reveal" style="--d:0.2s">
+            <span class="fact-num">2D</span>
+            <span class="fact-label">Game World</span>
+          </div>
+          <div class="fact-block fb-purple reveal" style="--d:0.3s">
+            <span class="fact-num">Free</span>
+            <span class="fact-label">Base Access</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-strip reveal">
+        <div class="team-card">
+          <div class="team-avatar ta-purple">RM</div>
+          <div class="team-info">
+            <strong>Mendio, Ruel</strong>
+            <span>Proponent</span>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar ta-cyan">BS</div>
+          <div class="team-info">
+            <strong>Samson, Benedict Paul S.</strong>
+            <span>Proponent</span>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar ta-pink">CM</div>
+          <div class="team-info">
+            <strong>Ms. Christine Marie Ordaneza D., LPT</strong>
+            <span>Proponent</span>
+          </div>
+        </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">Core Features</div>
+        <h2>What <span class="stroke-text">Aumazing</span> Can Do!</h2>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feat-card fc-cyan reveal" style="--d:0s">
+          <div class="feat-num">01</div>
+          <div class="feat-icon">🎲</div>
+          <h3>Gamified Pre-Assessment</h3>
+          <p>Kids play fun games that secretly measure their starting skill level. No boring tests!</p>
+          <div class="feat-tag">Smart Placement</div>
+        </div>
+
+        <div class="feat-card fc-yellow reveal" style="--d:0.1s">
+          <div class="feat-num">02</div>
+          <div class="feat-icon">🤖</div>
+          <h3>AI-Driven Analytics</h3>
+          <p>XGBoost AI studies response time, accuracy & patterns to assign the perfect learning path.</p>
+          <div class="feat-tag">XGBoost Powered</div>
+        </div>
+
+        <div class="feat-card fc-pink reveal" style="--d:0.2s">
+          <div class="feat-num">03</div>
+          <div class="feat-icon">🕹️</div>
+          <h3>2D Learning Games</h3>
+          <p>Colorful, visual, and interactive games built around ASD-friendly learning principles.</p>
+          <div class="feat-tag">ABA & TEACCH</div>
+        </div>
+
+        <div class="feat-card fc-purple reveal" style="--d:0.3s">
+          <div class="feat-num">04</div>
+          <div class="feat-icon">📊</div>
+          <h3>Parent Dashboard</h3>
+          <p>Clear progress reports and improvement charts so parents always know how their child is growing.</p>
+          <div class="feat-tag">Real-Time Insights</div>
+        </div>
+
+        <div class="feat-card fc-green reveal" style="--d:0.4s">
+          <div class="feat-num">05</div>
+          <div class="feat-icon">⏱️</div>
+          <h3>Screen Time Control</h3>
+          <p>Parents set daily limits. Aumazing helps keep screen time balanced and healthy.</p>
+          <div class="feat-tag">Parent Control</div>
+        </div>
+
+        <div class="feat-card fc-orange reveal" style="--d:0.5s">
+          <div class="feat-num">06</div>
+          <div class="feat-icon">🎥</div>
+          <h3>Premium Therapy Gateway</h3>
+          <p>Video sessions with therapists and a directory of therapy centers — all in one app.</p>
+          <div class="feat-tag">Premium Feature</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-section" id="steps">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">The Journey</div>
+        <h2>How Does It <span class="stroke-text">Work?</span></h2>
+      </div>
+
+      <div class="steps-track">
+        <div class="step-block sb-cyan reveal" style="--d:0s">
+          <div class="step-emoji">👤</div>
+          <div class="step-badge">Step 1</div>
+          <h3>Sign Up</h3>
+          <p>Parents register and create their child's profile in seconds.</p>
+        </div>
+        <div class="step-arrow reveal" style="--d:0.05s">➜</div>
+
+        <div class="step-block sb-yellow reveal" style="--d:0.1s">
+          <div class="step-emoji">🎯</div>
+          <div class="step-badge">Step 2</div>
+          <h3>Pre-Assessment</h3>
+          <p>The child plays a short quiz-game. AI finds their level.</p>
+        </div>
+        <div class="step-arrow reveal" style="--d:0.15s">➜</div>
+
+        <div class="step-block sb-pink reveal" style="--d:0.2s">
+          <div class="step-emoji">🎮</div>
+          <div class="step-badge">Step 3</div>
+          <h3>Play & Learn</h3>
+          <p>Personalized 2D games guide the child through leveled activities.</p>
+        </div>
+        <div class="step-arrow reveal" style="--d:0.25s">➜</div>
+
+        <div class="step-block sb-purple reveal" style="--d:0.3s">
+          <div class="step-emoji">📈</div>
+          <div class="step-badge">Step 4</div>
+          <h3>Track Growth</h3>
+          <p>Parents see real-time progress. Post-assessments show improvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who-section" id="who">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">For Everyone</div>
+        <h2>Who <span class="stroke-text">Benefits?</span></h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card wc-1 reveal" style="--d:0s">
+          <div class="who-icon">👶</div>
+          <h3>Children with ASD</h3>
+          <p>Engaging visual games that match their learning pace and developmental needs.</p>
+        </div>
+        <div class="who-card wc-2 reveal" style="--d:0.12s">
+          <div class="who-icon">👩</div>
+          <h3>Parents & Guardians</h3>
+          <p>Real-time insights, screen time tools, and module suggestions at your fingertips.</p>
+        </div>
+        <div class="who-card wc-3 reveal" style="--d:0.24s">
+          <div class="who-icon">👩‍⚕️</div>
+          <h3>Therapists</h3>
+          <p>An extra platform to reach clients remotely and monitor developmental patterns.</p>
+        </div>
+        <div class="who-card wc-4 reveal" style="--d:0.36s">
+          <div class="who-icon">🏫</div>
+          <h3>Schools & Researchers</h3>
+          <p>A contribution to inclusive educational technology and AI-driven special ed research.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="cta">
+    <div class="cta-inner">
+      <div class="cta-deco deco-left">🌟</div>
+      <div class="cta-deco deco-right">🎉</div>
+      <div class="cta-content reveal">
+        <div class="heading-block">Ready?</div>
+        <h2>Every Child Can Be<br /><span class="stroke-text-light">Aumazing!</span></h2>
+        <p>A capstone project built with heart — supporting early intervention,
+        empowering parents, and celebrating every milestone along the way.</p>
+        <div class="cta-tags">
+          <span>📍 Assumption College of Davao</span>
+          <span>🎓 BS Information Technology</span>
+          <span>📅 September 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="assets/images/Aumazing_Logo.png" alt="Aumazing Logo" class="footer-logo-img" />
+        <span>Aumazing</span>
+      </div>
+      <p class="footer-sub">Gamified Learning · AI-Driven · Built with ❤️</p>
+      <p class="footer-copy">
+        &copy; 2026 Mendio, Ruel &amp; Samson, Benedict Paul S. —
+        Assumption College of Davao · BS Information Technology
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script2.js"></script>
+</body>
+</html>
