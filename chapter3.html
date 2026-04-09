@@ -63,186 +63,465 @@
   <section class="chapter-content">
     <div class="content-container">
 
+      <!-- ===== 3.1 Software Process Model ===== -->
       <div class="lesson-card lesson-cyan">
         <div class="lesson-icon">📋</div>
         <div class="lesson-text">
-          <h3>3.1 How We Build Aumazing</h3>
-          <p>We use <strong>Agile-Kanban</strong> - a smart way to build apps step by step!</p>
-          <p style="margin-top: 16px;"><strong>Our 5 Steps (Kanban Board):</strong></p>
+          <h3>3.1 Software Process Model</h3>
+          <p>At the heart of Aumazing's development is the <strong>Agile Software Development framework</strong>, specifically the <strong>Kanban approach</strong>. Agile emphasizes iterative development, collaboration, responsiveness to change, and the continuous delivery of valuable software — making it ideal for projects that require ongoing refinement and feedback throughout development.</p>
+          <p style="margin-top: 12px;">Kanban adds a layer of visual workflow management: it visualizes work, limits work in progress (WIP), and promotes continuous improvement through transparent workflow stages. The proponents selected Agile-Kanban because Aumazing includes multiple modules — user account management, child profiles, gamified pre-assessment, AI-based analytics, module recommendation, progress tracking, a parent dashboard, screen time management, and a premium therapy gateway — each needing to be designed, tested, improved, and integrated progressively.</p>
+          <p style="margin-top: 12px; opacity: 0.85;">This setup is also practical for a student capstone: it supports phased development, continuous monitoring, and incremental completion without requiring the team to freeze requirements at the start.</p>
+        </div>
+      </div>
 
-          <div
-            style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 12px;">
-
-            <div
-              style="background: rgba(100,100,100,0.2); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">
-              📝 Backlog
-            </div>
-
-            <div
-              style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">
-              ➔</div>
-
-            <div
-              style="background: rgba(255,214,10,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--yellow);">
-              📋 To Do
-            </div>
-
-            <div
-              style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">
-              ➔</div>
-
-            <div
-              style="background: rgba(0,229,255,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--cyan);">
-              🔨 Doing
-            </div>
-
-            <div
-              style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">
-              ➔</div>
-
-            <div
-              style="background: rgba(155,93,229,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--purple);">
-              🧪 Testing
-            </div>
-
-            <div
-              style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">
-              ➔</div>
-
-            <div
-              style="background: rgba(6,214,160,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green);">
-              ✅ Done
-            </div>
-
-          </div>
-          <div style="text-align: center; margin: 20px 0;">
-            <img src="assets/images/Kanban_Board.png" alt="Kanban Board"
-              style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
-            <p style="margin-top: 10px; font-style: italic; opacity: 0.85;">Figure 3.1: Kanban Board</p>
-          </div>
-
-          <p style="margin-top: 16px;"><strong>Why this works:</strong></p>
-          <ul style="list-style: none; padding: 0;">
-            <li>✓ Can change things while building</li>
-            <li>✓ Test each part as we go</li>
-            <li>✓ See progress clearly</li>
-            <li>✓ Focus on one thing at a time</li>
+      <!-- 3.1.1 Rationale -->
+      <div class="lesson-card lesson-cyan">
+        <div class="lesson-icon">💡</div>
+        <div class="lesson-text">
+          <h3>3.1.1 Rationale for Using Agile-Kanban</h3>
+          <p>The choice of Agile-Kanban is grounded in several key advantages:</p>
+          <ul style="list-style: none; padding: 0; margin-top: 12px;">
+            <li style="margin-bottom: 10px;">🔄 <strong>Flexibility in the face of change</strong> — Requirements and interface designs can evolve mid-project without derailing progress. For an app targeting children with ASD, where usability, structure, and clarity of interaction are critical, this flexibility is essential.</li>
+            <li style="margin-bottom: 10px;">🧪 <strong>Continuous feedback and testing</strong> — Each component is tested as it's completed rather than waiting until the end. This matters especially when primary users are young children who may not articulate what isn't working.</li>
+            <li style="margin-bottom: 10px;">📊 <strong>Visual progress tracking</strong> — Kanban boards provide a transparent, at-a-glance view of the project's status, helping the team identify priorities, monitor throughput, and resolve bottlenecks.</li>
+            <li>🎯 <strong>Reduced multitasking</strong> — By limiting WIP, Kanban encourages deep focus on current tasks, leading to higher quality output and fewer context-switching errors.</li>
           </ul>
         </div>
       </div>
 
+      <!-- 3.1.2 Kanban Workflow Stages -->
+      <div class="lesson-card lesson-cyan">
+        <div class="lesson-icon">🔄</div>
+        <div class="lesson-text">
+          <h3>3.1.2 Kanban Workflow Stages</h3>
+          <p>The Aumazing project organizes its workflow into <strong>five Kanban stages</strong>:</p>
+
+          <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 16px;">
+            <div style="background: rgba(100,100,100,0.2); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">📝 Backlog</div>
+            <div style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">➔</div>
+            <div style="background: rgba(255,214,10,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--yellow);">📋 To Do</div>
+            <div style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">➔</div>
+            <div style="background: rgba(0,229,255,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--cyan);">🔨 Doing</div>
+            <div style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">➔</div>
+            <div style="background: rgba(155,93,229,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--purple);">🧪 Testing</div>
+            <div style="display: flex; align-items: center; color: rgba(255,255,255,0.5); font-size: 18px; line-height: 1;">➔</div>
+            <div style="background: rgba(6,214,160,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green);">✅ Done</div>
+          </div>
+
+          <div style="text-align: center; margin: 20px 0;">
+            <img src="assets/images/Kanban_Board.png" alt="Kanban Board" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
+            <p style="margin-top: 10px; font-style: italic; opacity: 0.85;">Figure 3.1: Kanban Board Stages Diagram</p>
+          </div>
+
+          <ul style="list-style: none; padding: 0; margin-top: 12px;">
+            <li style="margin-bottom: 10px;">📝 <strong>Backlog</strong> — The comprehensive inventory of all future work items and development tasks. This serves as the primary holding area for every proposed feature and technical suggestion.</li>
+            <li style="margin-bottom: 10px;">📋 <strong>To Do</strong> — Specific work items strategically selected from the backlog, signifying their readiness for imminent implementation.</li>
+            <li style="margin-bottom: 10px;">🔨 <strong>Doing</strong> — Items under active development. The number of concurrent tasks is <strong>strictly limited to three</strong> to maintain focus and minimize cognitive load.</li>
+            <li style="margin-bottom: 10px;">🧪 <strong>Testing</strong> — Completed features undergo rigorous quality assurance to verify compliance with requirements and ensure the system is free of technical errors.</li>
+            <li>✅ <strong>Done</strong> — The terminal phase: items have successfully satisfied all preceding validation stages and developmental milestones.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3.1.3 Development Activities -->
+      <div class="lesson-card lesson-cyan">
+        <div class="lesson-icon">⚙️</div>
+        <div class="lesson-text">
+          <h3>3.1.3 Development Activities in the Framework</h3>
+          <p>Under the Agile-Kanban umbrella, the team executes six core activities:</p>
+          <ul style="list-style: none; padding: 0; margin-top: 12px;">
+            <li style="margin-bottom: 10px;">1️⃣ <strong>Planning and Requirement Gathering</strong> — Identifying the goals of the study, defining system requirements, and organizing the features needed by users.</li>
+            <li style="margin-bottom: 10px;">2️⃣ <strong>System Design</strong> — Creating the system architecture, interface layouts, process flows, navigation structure, and database design.</li>
+            <li style="margin-bottom: 10px;">3️⃣ <strong>Incremental Development</strong> — Building module by module, starting with core features (registration, login, child profiles, assessments) then advancing to analytics, dashboards, recommendations, and therapy functions.</li>
+            <li style="margin-bottom: 10px;">4️⃣ <strong>Testing and Revision</strong> — Each feature is tested post-implementation for usability, accuracy, and correct system behavior. Issues are cycled back into the workflow for correction.</li>
+            <li style="margin-bottom: 10px;">5️⃣ <strong>Evaluation and Validation</strong> — The completed prototype is evaluated by selected users and qualified validators (teachers, specialists, practitioners) to assess appropriateness, usability, and relevance.</li>
+            <li>6️⃣ <strong>Documentation and Finalization</strong> — Finalizing the prototype, technical documentation, and capstone manuscript.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3.1.4 Artifacts -->
+      <div class="lesson-card lesson-cyan">
+        <div class="lesson-icon">📦</div>
+        <div class="lesson-text">
+          <h3>3.1.4 Artifacts of the Chosen Framework</h3>
+          <p>The Agile-Kanban process produces a rich set of deliverables that serve as both evidence of progress and developmental guides:</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">📋 Product backlog</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">📊 Kanban board</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">📝 User stories</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">🎨 Wireframes &amp; mockups</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">🔀 Process flow diagrams</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">🧪 Test cases &amp; results</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">🏗️ Prototype builds</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">📒 Revision logs</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">✅ Validation results</div>
+            <div style="background: rgba(0,229,255,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2);">📄 Implementation plans</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 3.2 Software Requirements ===== -->
       <div class="lesson-card lesson-yellow">
         <div class="lesson-icon">📱</div>
         <div class="lesson-text">
-          <h3>3.2 App Technology</h3>
-          <p><strong>🎮 Flutter + Flame</strong></p>
-          <p style="opacity: 0.85;">For making games and screens that work on phones and tablets!</p>
-
-          <p style="margin-top: 16px;"><strong>🗄️ Supabase</strong></p>
-          <p style="opacity: 0.85;">For storing all the important data safely in the cloud!</p>
-
-          <p style="margin-top: 16px;"><strong>💾 SQLite</strong></p>
-          <p style="opacity: 0.85;">For playing games even when there's no internet!</p>
-
-          <p style="margin-top: 16px;"><strong>🤖 Python + FastAPI + XGBoost</strong></p>
-          <p style="opacity: 0.85;">For the smart AI that checks how kids are doing!</p>
-
-          <p style="margin-top: 16px;"><strong>📹 Jitsi Meet</strong></p>
-          <p style="opacity: 0.85;">For video calls with therapists (Premium feature)!</p>
+          <h3>3.2 Software Requirements</h3>
+          <p>This section defines <em>what</em> Aumazing must do and <em>how well</em> it must do it. The requirements are based on the project objectives and the identified features: mobile access, child profile management, gamified pre-assessment, AI-driven assessment analytics, module recommendation, progress tracking, parent dashboard, screen-time monitoring, and premium therapy support.</p>
         </div>
       </div>
 
-      <div class="lesson-card lesson-pink">
+      <!-- 3.2.1 User Requirements -->
+      <div class="lesson-card lesson-yellow">
         <div class="lesson-icon">👨‍👩‍👧</div>
         <div class="lesson-text">
-          <h3>3.3 User Requirements</h3>
-          <p><strong>What parents need:</strong></p>
+          <h3>3.2.1 User Requirements</h3>
+          <p>User requirements are expressed as <strong>user stories</strong> — concise narratives that capture who the user is, what they want, and why.</p>
+
+          <p style="margin-top: 16px;"><strong>👨‍👩‍👧 Parent / Guardian Stories:</strong></p>
           <ul style="list-style: none; padding: 0; margin-top: 8px;">
-            <li style="margin-bottom: 8px;">🔐 Sign up and log in safely</li>
-            <li style="margin-bottom: 8px;">👶 Create a profile for their child</li>
-            <li style="margin-bottom: 8px;">📊 See their child's progress</li>
-            <li style="margin-bottom: 8px;">⏰ Set screen time limits</li>
-            <li>📹 Connect with therapists (Premium)</li>
+            <li style="margin-bottom: 8px;">🔐 Register and log in securely to access and manage the child's records</li>
+            <li style="margin-bottom: 8px;">👶 Create and manage a child profile so the app can personalize activities</li>
+            <li style="margin-bottom: 8px;">🎮 Have the child undergo a gamified pre-assessment to determine the appropriate starting level</li>
+            <li style="margin-bottom: 8px;">🧠 Receive module recommendations based on the child's performance, matched to developmental needs</li>
+            <li style="margin-bottom: 8px;">📊 View progress, performance summaries, and recommendations in a centralized dashboard</li>
+            <li style="margin-bottom: 8px;">⏰ Regulate screen time for balanced, healthy usage</li>
+            <li style="margin-bottom: 8px;">💾 Have the system save the child's progress and assessment history over time</li>
+            <li>📹 Access premium features — video conferencing and therapy center directory — for additional support</li>
           </ul>
-          <p style="margin-top: 16px;"><strong>What children need:</strong></p>
+
+          <p style="margin-top: 16px;"><strong>🧒 Child User Story:</strong></p>
           <ul style="list-style: none; padding: 0; margin-top: 8px;">
-            <li>🎮 Fun, colorful games</li>
-            <li>📷 Clear visual guides</li>
-            <li>🏆 Rewards for completing tasks</li>
+            <li>🎮 Interactive, visually guided 2D learning activities that make learning enjoyable and easy to follow</li>
+          </ul>
+
+          <p style="margin-top: 16px;"><strong>👩‍⚕️ Validator / Practitioner Story:</strong></p>
+          <ul style="list-style: none; padding: 0; margin-top: 8px;">
+            <li>📝 Assess the relevance and usability of the system so its effectiveness for the intended users can be evaluated</li>
           </ul>
         </div>
       </div>
 
-      <div class="lesson-card lesson-purple">
-        <div class="lesson-icon">🎯</div>
+      <!-- 3.2.2 Functional Requirements -->
+      <div class="lesson-card lesson-yellow">
+        <div class="lesson-icon">⚡</div>
         <div class="lesson-text">
-          <h3>3.4 Features List</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
-            <div style="background: rgba(0,229,255,0.1); padding: 12px; border-radius: 8px;">
-              <strong>Core Features:</strong>
-              <ul style="margin-top: 8px; padding-left: 16px;">
-                <li>User registration/login</li>
-                <li>Child profile management</li>
-                <li>Pre-assessment quiz</li>
-                <li>2D learning games</li>
-                <li>Level progression</li>
-                <li>Post-assessment</li>
-                <li>Parent dashboard</li>
+          <h3>3.2.2 Functional Requirements</h3>
+          <p>The functional requirements describe <strong>what the system should do</strong>, how it should react to user inputs, and how it should behave in specific situations. Aumazing has <strong>33 individual functional requirements</strong>:</p>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 16px;">
+
+            <div style="background: rgba(255,214,10,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,214,10,0.2);">
+              <strong>🔐 Account &amp; Profile Management</strong>
+              <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+                <li>Parents can create accounts with validated registration (rejects incomplete, invalid, or duplicate data)</li>
+                <li>Registered users can log in with valid credentials; incorrect inputs trigger error messages</li>
+                <li>Parents can create, edit, and manage child profiles</li>
+                <li>Child profile completion is required before accessing assessments and learning modules</li>
               </ul>
             </div>
-            <div style="background: rgba(155,93,229,0.1); padding: 12px; border-radius: 8px;">
-              <strong>Special Features:</strong>
-              <ul style="margin-top: 8px; padding-left: 16px;">
-                <li>AI assessment (XGBoost)</li>
-                <li>Smart recommendations</li>
-                <li>Screen time control</li>
-                <li>Progress tracking</li>
-                <li>Offline play (SQLite)</li>
-                <li>Therapy directory</li>
-                <li>Video conferencing</li>
+
+            <div style="background: rgba(255,214,10,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,214,10,0.2);">
+              <strong>🧪 Assessment Engine</strong>
+              <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+                <li>Gamified pre-assessment provided when a child profile is newly created</li>
+                <li>Records gameplay indicators: response time, answer accuracy, retries, errors, time spent, completed activities</li>
+                <li>AI-driven analysis of indicators using XGBoost</li>
+                <li>Recommends appropriate starting module or level based on results</li>
+                <li>Post-assessment after module completion; pre/post comparison to measure performance changes</li>
               </ul>
+            </div>
+
+            <div style="background: rgba(255,214,10,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,214,10,0.2);">
+              <strong>🎮 Learning &amp; Gameplay</strong>
+              <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+                <li>Displays learning modules according to the child's current developmental level</li>
+                <li>Children can access and complete 2D interactive learning activities</li>
+                <li>Immediate visual or interactive feedback during gameplay</li>
+                <li>Performance is recorded during each activity</li>
+                <li>Reward-based or progression-based structure to encourage continued participation</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(255,214,10,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,214,10,0.2);">
+              <strong>💾 Data Management &amp; Offline Support</strong>
+              <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+                <li>All completed activities, progress records, and results are saved to the system database</li>
+                <li>When offline, unsynced gameplay and assessment records are stored locally</li>
+                <li>Local records automatically synchronize with the cloud once connectivity returns</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(255,214,10,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,214,10,0.2);">
+              <strong>📊 Parent Dashboard &amp; Screen Time</strong>
+              <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+                <li>Dashboard updates after every completed assessment or learning activity</li>
+                <li>Shows completed activities, level progression, assessment summaries, and recommendations</li>
+                <li>Parents can set and manage screen-time limits; system notifies when limits are reached</li>
+                <li>Restricts gameplay when screen-time is exceeded (unless reset by parent)</li>
+              </ul>
+            </div>
+
+            <div style="background: rgba(255,214,10,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,214,10,0.2);">
+              <strong>⭐ Premium Features</strong>
+              <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+                <li>Video conferencing for remote consultation via the premium therapy gateway</li>
+                <li>Directory of therapy centers or practitioners for consultation and support</li>
+                <li>Protected access through authenticated user login</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="background: rgba(255,70,70,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,70,70,0.25); margin-top: 12px;">
+            <strong>🚫 What the system will NOT do:</strong>
+            <ul style="margin-top: 8px; padding-left: 16px; opacity: 0.9;">
+              <li>Generate formal medical, psychiatric, or psychological diagnoses</li>
+              <li>Replace licensed therapists, developmental specialists, or medical professionals</li>
+              <li>Provide premium video consultation without a stable internet connection</li>
+              <li>Allow unauthorized users to access another child's records or progress data</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.2.3 Non-Functional Requirements -->
+      <div class="lesson-card lesson-yellow">
+        <div class="lesson-icon">🏅</div>
+        <div class="lesson-text">
+          <h3>3.2.3 Non-Functional Requirements</h3>
+          <p>Beyond what the system does, the non-functional requirements define <strong>how well</strong> it must perform — the quality attributes and operational constraints:</p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>🎨 Usability</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Child-friendly, visually guided, understandable for parents and young users</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>⚡ Performance</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Core screens, assessments, and dashboards load within acceptable response times</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>🔒 Security</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">User accounts and child data protected through secure authentication</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>🛡️ Reliability</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Accurate and consistent data saving without loss during normal operation</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>🔧 Maintainability</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Organized codebase allowing future updates, debugging, and expansion</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>📱 Compatibility</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Runs on supported mobile devices and operating systems</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>📈 Scalability</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Supports addition of more modules, reports, and services in future versions</p>
+            </div>
+            <div style="background: rgba(255,214,10,0.08); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,214,10,0.15);">
+              <strong>💾 Storage</strong>
+              <p style="margin-top: 4px; font-size: 0.9em; opacity: 0.85;">Handles profiles, results, logs, and offline records without degrading performance</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="lesson-card lesson-orange">
+      <!-- ===== 3.3 Software and Hardware Requirements ===== -->
+      <div class="lesson-card lesson-pink">
+        <div class="lesson-icon">🛠️</div>
+        <div class="lesson-text">
+          <h3>3.3 Software and Hardware Requirements</h3>
+          <p>This section presents the software and hardware technologies required to develop, test, and implement Aumazing. The selected tools were chosen based on their suitability for a six-month capstone project, their support for cross-platform mobile development, and their compatibility with the proposed features — particularly the 2D gamified learning activities, AI-driven assessment, progress monitoring, offline support, and premium therapy gateway.</p>
+        </div>
+      </div>
+
+      <!-- 3.3.1 Software Requirements for Development -->
+      <div class="lesson-card lesson-pink">
         <div class="lesson-icon">💻</div>
         <div class="lesson-text">
-          <h3>3.5 Hardware Needed</h3>
-          <p><strong>For Development:</strong></p>
-          <ul style="list-style: none; padding: 0; margin-top: 8px;">
-            <li>💻 Laptop/computer</li>
-            <li>📱 Android phone/tablet for testing</li>
-            <li>🌐 Internet connection</li>
-          </ul>
-          <p style="margin-top: 16px;"><strong>For Users:</strong></p>
-          <ul style="list-style: none; padding: 0; margin-top: 8px;">
-            <li>📱 Android or iOS phone/tablet</li>
-            <li>🌐 Internet (for most features)</li>
-            <li>💾 Storage space for the app</li>
-          </ul>
+          <h3>3.3.1 Software Requirements for Development</h3>
+          <p>The Aumazing tech stack is thoughtfully composed, with each layer chosen for a specific purpose:</p>
+
+          <div style="margin-top: 16px;">
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2); margin-bottom: 10px;">
+              <strong>🎮 Flutter + Flame — Mobile App &amp; Game Layer</strong>
+              <p style="margin-top: 6px; opacity: 0.9;">Flutter provides the cross-platform UI framework, while Flame is a modular 2D game engine built on top of Flutter. Flame's <code>GameWidget</code> embeds game scenes directly inside the Flutter widget tree alongside standard components (forms, dashboards, overlays, navigation). This keeps the entire app — UI, assessment scenes, and mini-games — within a <strong>single development ecosystem</strong>.</p>
+            </div>
+
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2); margin-bottom: 10px;">
+              <strong>🗄️ Supabase — Backend &amp; Cloud Database</strong>
+              <p style="margin-top: 6px; opacity: 0.9;">Supabase provides a Postgres-based backend platform with built-in database, authentication, storage, and related services. Every project includes a full Postgres database, making it ideal for managing parent accounts, child profiles, progress logs, assessment results, and therapy directory entries.</p>
+            </div>
+
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2); margin-bottom: 10px;">
+              <strong>💾 SQLite — Offline &amp; Local Data</strong>
+              <p style="margin-top: 6px; opacity: 0.9;">SQLite is a self-contained, serverless, zero-configuration SQL database engine embedded in the mobile app. It handles cached child records, offline gameplay data, and unsynced assessment logs until internet connectivity returns and synchronization occurs — ensuring children can <strong>keep playing even without Wi-Fi</strong>.</p>
+            </div>
+
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2); margin-bottom: 10px;">
+              <strong>🤖 Python + FastAPI + XGBoost — AI Assessment Service</strong>
+              <p style="margin-top: 6px; opacity: 0.9;">The AI layer is a <strong>separate microservice</strong>. FastAPI provides a modern, high-performance API framework, and XGBoost delivers optimized gradient boosting for gameplay-based assessment analytics. The mobile app sends gameplay indicators (response time, accuracy, retries, errors) to this API, and XGBoost returns assessment outputs for module recommendation and progress analysis.</p>
+            </div>
+
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2); margin-bottom: 10px;">
+              <strong>🧠 Recommendation Engine — Rule-Based + Content-Based</strong>
+              <p style="margin-top: 6px; opacity: 0.9;">Rather than building a complex ML recommender, the system uses assessment scores, response time, error frequency, and skill tags attached to learning modules to determine the most appropriate next activities. This practical approach aligns with the project scope.</p>
+            </div>
+
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2); margin-bottom: 10px;">
+              <strong>📹 Jitsi Meet — Premium Therapy Gateway</strong>
+              <p style="margin-top: 6px; opacity: 0.9;">Jitsi Meet is a free, open-source video conferencing platform with an Android SDK that can be embedded into the mobile app — providing remote consultation functionality without the cost of commercial video platforms.</p>
+            </div>
+
+            <div style="background: rgba(255,45,120,0.08); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,45,120,0.2);">
+              <strong>🔧 Development &amp; Collaboration Tools</strong>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
+                <span style="opacity: 0.9;">🎨 <strong>Figma</strong> — UI/UX design</span>
+                <span style="opacity: 0.9;">🔀 <strong>Git + GitHub</strong> — Version control</span>
+                <span style="opacity: 0.9;">📝 <strong>VS Code</strong> — Code editor</span>
+                <span style="opacity: 0.9;">📱 <strong>Android Studio</strong> — Build &amp; test</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="lesson-card lesson-green">
-        <div class="lesson-icon">✅</div>
+      <!-- 3.3.2 Hardware Requirements for Development -->
+      <div class="lesson-card lesson-pink">
+        <div class="lesson-icon">🖥️</div>
         <div class="lesson-text">
-          <h3>3.6 Is This Project Possible?</h3>
-          <p><strong>💰 Economically:</strong> Yes! Using free tools and student resources.</p>
-          <p style="margin-top: 12px;"><strong>🔧 Technically:</strong> Yes! All needed technologies exist and work well
-            together.</p>
-          <p style="margin-top: 12px;"><strong>👨‍👩‍👧 For Families:</strong> Yes! It directly helps children with
-            autism learn at home.</p>
-          <p style="margin-top: 12px;"><strong>📅 On Time:</strong> Yes! The 6-month plan (Feb-Sep 2026) is doable.</p>
+          <h3>3.3.2 Hardware Requirements for Development</h3>
+          <p>To develop and test the proposed system, the proponents will need:</p>
+          <ul style="list-style: none; padding: 0; margin-top: 12px;">
+            <li style="margin-bottom: 10px;">💻 <strong>Laptop or desktop computer</strong> — Capable of running Flutter development tools, Android Studio, local databases, design tools, and backend services. Must support code editing, emulator execution, model testing, and documentation.</li>
+            <li style="margin-bottom: 10px;">📱 <strong>At least one Android mobile device</strong> — For real-device testing, especially validating 2D learning activities, touch-based interaction, local data caching, and video conferencing features.</li>
+            <li>🌐 <strong>Stable internet connection</strong> — Required for backend testing, online authentication, cloud database access, and premium gateway evaluation.</li>
+          </ul>
         </div>
       </div>
 
+      <!-- 3.3.3 Hardware and Software Requirements for End Users -->
+      <div class="lesson-card lesson-pink">
+        <div class="lesson-icon">👤</div>
+        <div class="lesson-text">
+          <h3>3.3.3 Hardware and Software Requirements for End Users</h3>
+          <p>For families using Aumazing:</p>
+          <ul style="list-style: none; padding: 0; margin-top: 12px;">
+            <li style="margin-bottom: 10px;">📱 <strong>Compatible mobile device</strong> — Preferably an Android smartphone or tablet with sufficient storage and an updated operating system.</li>
+            <li style="margin-bottom: 10px;">🌐 <strong>Internet connectivity</strong> — Required for account authentication, cloud sync, dashboard updates, therapist directory access, and video conferencing.</li>
+            <li>💾 <strong>Offline capability</strong> — Selected game activities and local records can function offline through SQLite-based storage until the device reconnects and data syncs.</li>
+          </ul>
+          <p style="margin-top: 12px; opacity: 0.85;">This hybrid online/offline architecture is a deliberate design decision, ensuring that children can continue learning even in connectivity-challenged environments.</p>
+        </div>
+      </div>
+
+      <!-- ===== 3.4 Feasibility Issues ===== -->
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">🎯</div>
+        <div class="lesson-text">
+          <h3>3.4 Feasibility Issues</h3>
+          <p>A feasibility study determines whether a proposed project is practical, achievable, and worth pursuing before major resources are committed. It examines whether the project is viable in terms of resources, cost, technical capacity, operations, and schedule. For this study, the proponents examine feasibility across <strong>four dimensions</strong>.</p>
+        </div>
+      </div>
+
+      <!-- 3.4.1 Economic Feasibility -->
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">💰</div>
+        <div class="lesson-text">
+          <h3>3.4.1 Economic Feasibility</h3>
+          <div style="background: rgba(6,214,160,0.1); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green); display: inline-block; margin-bottom: 12px;">
+            <strong>Verdict: ✅ Feasible</strong>
+          </div>
+          <p>The proposed capstone is economically feasible because it is developed as an <strong>academic prototype using available student resources</strong> and predominantly free development tools. The main costs — internet access, possible software subscriptions, testing devices, hosting services, and design utilities — are manageable within scope.</p>
+          <p style="margin-top: 10px; opacity: 0.9;">Beyond cost management, the app provides tangible practical value: it supports home-based intervention activities and helps parents continue structured learning exercises outside formal therapy sessions. While it doesn't replace licensed diagnosis or treatment, it can meaningfully <strong>reduce barriers to accessing structured home-based support</strong>.</p>
+        </div>
+      </div>
+
+      <!-- 3.4.2 Technical Feasibility -->
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">🔧</div>
+        <div class="lesson-text">
+          <h3>3.4.2 Technical Feasibility</h3>
+          <div style="background: rgba(6,214,160,0.1); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green); display: inline-block; margin-bottom: 12px;">
+            <strong>Verdict: ✅ Feasible</strong>
+          </div>
+          <p>Every required feature can be implemented using <strong>currently available, well-documented technologies</strong>:</p>
+          <ul style="list-style: none; padding: 0; margin-top: 10px;">
+            <li style="margin-bottom: 6px;">🎮 <strong>Flutter + Flame</strong> — Unified environment for mobile UI and 2D mini-games</li>
+            <li style="margin-bottom: 6px;">🗄️ <strong>Supabase</strong> — Postgres-based backend with authentication and storage</li>
+            <li style="margin-bottom: 6px;">💾 <strong>SQLite</strong> — Offline caching and local game logs</li>
+            <li style="margin-bottom: 6px;">🤖 <strong>FastAPI + XGBoost</strong> — Lightweight AI assessment service as a separate API</li>
+            <li>📹 <strong>Jitsi Meet</strong> — Embeddable video conferencing for premium therapy</li>
+          </ul>
+          <p style="margin-top: 10px; opacity: 0.9;">The entire stack is sufficiently capable of supporting the proposed architecture within the project's time frame, scope, and the team's technical capacity.</p>
+        </div>
+      </div>
+
+      <!-- 3.4.3 Operational Feasibility -->
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">👨‍👩‍👧</div>
+        <div class="lesson-text">
+          <h3>3.4.3 Operational Feasibility</h3>
+          <div style="background: rgba(6,214,160,0.1); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green); display: inline-block; margin-bottom: 12px;">
+            <strong>Verdict: ✅ Feasible</strong>
+          </div>
+          <p>The project directly addresses the identified need for structured, accessible, home-based support for children with early-stage ASD. It's designed for <strong>parent-guided use and child participation</strong>, fitting naturally into the context of home-based intervention.</p>
+          <p style="margin-top: 10px; opacity: 0.9;">Key features — guided activities, progress monitoring, recommendation support, and optional therapy access — align with the daily needs of families. Crucially, the system is positioned as a <strong>supplementary support tool</strong>, not a replacement for specialists, therapists, or medical professionals — making it practical for integration into existing care routines.</p>
+        </div>
+      </div>
+
+      <!-- 3.4.4 Schedule Feasibility -->
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">📅</div>
+        <div class="lesson-text">
+          <h3>3.4.4 Schedule Feasibility</h3>
+          <div style="background: rgba(6,214,160,0.1); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green); display: inline-block; margin-bottom: 12px;">
+            <strong>Verdict: ✅ Feasible</strong>
+          </div>
+          <p>The project has a defined development period covering planning, design, development, testing, evaluation, and documentation. By using Agile-Kanban, the team can divide work into smaller tasks, monitor progress continuously, and complete modules incrementally.</p>
+          <p style="margin-top: 12px;"><strong>Projected Schedule Flow:</strong></p>
+          <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+            <div style="background: rgba(155,93,229,0.12); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(155,93,229,0.3); text-align: center; font-size: 0.9em;">
+              📝 <strong>Early</strong><br>Planning &amp; Requirements
+            </div>
+            <div style="color: rgba(255,255,255,0.5); font-size: 18px;">➔</div>
+            <div style="background: rgba(155,93,229,0.12); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(155,93,229,0.3); text-align: center; font-size: 0.9em;">
+              🎨 <strong>Middle</strong><br>Design &amp; Prototype
+            </div>
+            <div style="color: rgba(255,255,255,0.5); font-size: 18px;">➔</div>
+            <div style="background: rgba(155,93,229,0.12); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(155,93,229,0.3); text-align: center; font-size: 0.9em;">
+              🧪 <strong>Later</strong><br>Testing &amp; Evaluation
+            </div>
+            <div style="color: rgba(255,255,255,0.5); font-size: 18px;">➔</div>
+            <div style="background: rgba(155,93,229,0.12); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(155,93,229,0.3); text-align: center; font-size: 0.9em;">
+              📄 <strong>Final</strong><br>Revision &amp; Documentation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 3.5 Chapter Summary ===== -->
+      <div class="lesson-card lesson-green">
+        <div class="lesson-icon">📖</div>
+        <div class="lesson-text">
+          <h3>3.5 Chapter Summary</h3>
+          <p>This chapter presented the complete methodology of the Aumazing project, tying together the <em>how</em> and the <em>with what</em>:</p>
+          <ul style="list-style: none; padding: 0; margin-top: 12px;">
+            <li style="margin-bottom: 10px;">📋 <strong>Process</strong> — Agile-Kanban provides a flexible, visual, and iterative framework that supports the phased development of a multi-module application.</li>
+            <li style="margin-bottom: 10px;">📝 <strong>Requirements</strong> — A comprehensive set of user stories, 33 functional requirements, and 10 non-functional quality attributes define exactly what the system must do — and what it must not.</li>
+            <li style="margin-bottom: 10px;">🛠️ <strong>Technology</strong> — A modern, practical tech stack (Flutter/Flame, Supabase, SQLite, FastAPI/XGBoost, Jitsi Meet) is selected for capability, cost-effectiveness, and compatibility.</li>
+            <li>✅ <strong>Feasibility</strong> — The project passes all four feasibility tests — economic, technical, operational, and schedule — confirming that Aumazing is not just a good idea, but a buildable, deliverable one.</li>
+          </ul>
+          <p style="margin-top: 14px; opacity: 0.9;">The methodology demonstrates that Aumazing is structured, practical, and achievable within the intended scope of a capstone study — a project built with intention, from the process framework down to the choice of every library and tool.</p>
+        </div>
+      </div>
+
+      <!-- ===== Completion Card ===== -->
       <div class="completion-card">
         <div class="completion-icon">🎊</div>
-        <h2>Aumazing Capstone Complete!</h2>
-        <p>You've learned how Aumazing is built! Built with research, designed with love for children with autism. 🌟
-        </p>
+        <h2>Chapter 3 Complete!</h2>
+        <p>You've explored the full methodology behind Aumazing — from Agile-Kanban workflows to AI-driven assessments. Built with research, designed with love for children with autism. 🌟</p>
         <div class="completion-stars">
           <span>🏆</span><span>⭐</span><span>🌟</span><span>⭐</span><span>🏆</span>
         </div>
