@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Chapter 1 — Aumazing</title>
+  <link rel="stylesheet" href="css/style2.css" />
+  <link rel="stylesheet" href="css/chapter.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Fredoka+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="net-canvas" class="net-canvas" aria-hidden="true"></canvas>
+
+  <div class="bg-shapes" aria-hidden="true">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+    <div class="shape s6"></div>
+    <div class="shape s7"></div>
+    <div class="shape s8"></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="assets/images/Aumazing_Logo.png" alt="Aumazing Logo" class="nav-logo-img" />
+      <span>Aumazing</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Chapters <span class="drop-arrow">▼</span></a>
+        <div class="dropdown-content">
+          <a href="chapter1.html"><span class="ch-icon">1️⃣</span> Chapter 1</a>
+          <a href="chapter2.html"><span class="ch-icon">2️⃣</span> Chapter 2</a>
+          <a href="chapter3.html"><span class="ch-icon">3️⃣</span> Chapter 3</a>
+        </div>
+      </li>
+      <li><a href="index.html#cta" class="nav-pill">Let's Go! 🚀</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="chapter-hero ch1-hero">
+    <div class="chapter-badge">Chapter 1</div>
+    <div class="chapter-emoji">📚</div>
+    <h1>Introduction</h1>
+    <p>Learn about the background, objectives, and scope of Aumazing</p>
+    <div class="chapter-stars">
+      <span>⭐</span><span>⭐</span><span>⭐</span>
+    </div>
+  </section>
+
+  <section class="chapter-content">
+    <div class="content-container">
+      
+      <div class="lesson-card lesson-cyan">
+        <div class="lesson-icon">🎯</div>
+        <div class="lesson-text">
+          <h3>1.1 Background of the Study</h3>
+          <p>Technology is changing how we help children learn! Computers, phones, and special apps can now help kids with Autism Spectrum Disorder (ASD) learn new things at home. The World Health Organization says about 1 in 100 children have autism, and they need special help early on.</p>
+          <p>In the Philippines, getting therapy can cost a lot of money - about ₱38,868 per year! That's why many families need help practicing at home between doctor visits.</p>
+          <p>Aumazing is here to help! It's a fun app with games that teach children ages 2-6 with autism how to learn better through play.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-yellow">
+        <div class="lesson-icon">🎯</div>
+        <div class="lesson-text">
+          <h3>1.2 Objectives of the Study</h3>
+          <p>The main goal of Aumazing is to create a fun 2D game app that uses special computer programs to help young children with autism learn at home.</p>
+          <p><strong>Our goals:</strong></p>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;">🎮 Create fun 2D games with quizzes and learning levels</li>
+            <li style="margin-bottom: 8px;">🤖 Use special computer programs (AI) to check how well kids are doing</li>
+            <li style="margin-bottom: 8px;">📊 Help parents see their child's progress</li>
+            <li style="margin-bottom: 8px;">⏰ Make sure kids don't play too long</li>
+            <li>💻 Connect families with therapists when they need more help</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-pink">
+        <div class="lesson-icon">❤️</div>
+        <div class="lesson-text">
+          <h3>1.3 Significance of the Study</h3>
+          <p>Aumazing helps many people:</p>
+          <div class="color-showcase">
+            <div class="color-dot cd-red" style="background: rgba(0,229,255,0.3); border: 2px solid var(--cyan);" title="Children">👶</div>
+            <div class="color-dot cd-blue" style="background: rgba(255,214,10,0.3); border: 2px solid var(--yellow);" title="Parents">👩</div>
+            <div class="color-dot cd-yellow" style="background: rgba(255,45,120,0.3); border: 2px solid var(--pink);" title="Therapists">👩‍⚕️</div>
+            <div class="color-dot cd-green" style="background: rgba(155,93,229,0.3); border: 2px solid var(--purple);" title="Schools">🏫</div>
+            <div class="color-dot cd-purple" style="background: rgba(6,214,160,0.3); border: 2px solid var(--green);" title="Researchers">🔬</div>
+          </div>
+          <p style="margin-top: 16px;"><strong>Children</strong> - Get fun games to learn new skills!</p>
+          <p><strong>Parents</strong> - See progress and know what to practice!</p>
+          <p><strong>Therapists</strong> - Help more families from anywhere!</p>
+          <p><strong>Schools</strong> - Learn new ways to help all kids!</p>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">📋</div>
+        <div class="lesson-text">
+          <h3>1.4 Scope and Delimitation</h3>
+          <p><strong>What Aumazing DOES:</strong></p>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;">✅ Works on phones and tablets (Android & iOS)</li>
+            <li style="margin-bottom: 8px;">✅ Has fun games for kids ages 2-6</li>
+            <li style="margin-bottom: 8px;">✅ Checks learning with quizzes</li>
+            <li style="margin-bottom: 8px;">✅ Uses computer programs to suggest learning levels</li>
+            <li style="margin-bottom: 8px;">✅ Shows parents their child's progress</li>
+            <li style="margin-bottom: 8px;">✅ Controls screen time</li>
+            <li>✅ Helps find therapy centers</li>
+          </ul>
+          <p style="margin-top: 16px;"><strong>What Aumazing does NOT do:</strong></p>
+          <ul style="list-style: none; padding: 0; opacity: 0.8;">
+            <li style="margin-bottom: 8px;">❌ Does not diagnose autism</li>
+            <li style="margin-bottom: 8px;">❌ Does not replace real doctors</li>
+            <li style="margin-bottom: 8px;">❌ Is not for older kids or other conditions</li>
+            <li>❌ Cannot do all therapy types</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-orange">
+        <div class="lesson-icon">📅</div>
+        <div class="lesson-text">
+          <h3>1.5 Time and Place of the Study</h3>
+          <p>Aumazing is being made from February 2026 to September 2026 at <strong>Assumption College of Davao</strong> in the Philippines.</p>
+          <p>Testing will be done with help from parents, teachers, and therapy experts in Davao City to make sure the app works well for families.</p>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-green">
+        <div class="lesson-icon">📖</div>
+        <div class="lesson-text">
+          <h3>1.6 Key Words</h3>
+          <p><strong>ASD</strong> - Autism Spectrum Disorder - when someone's brain works differently</p>
+          <p><strong>Gamification</strong> - Making learning fun like playing games</p>
+          <p><strong>Pre-Assessment</strong> - A quiz at the start to see what you know</p>
+          <p><strong>Post-Assessment</strong> - A quiz at the end to see what you learned</p>
+          <p><strong>AI</strong> - Artificial Intelligence - computer programs that learn</p>
+        </div>
+      </div>
+
+      <div class="chapter-navigation">
+        <div class="nav-prev">
+          <a href="index.html" class="nav-btn nb-home">
+            <span class="nb-icon">🏠</span>
+            <span class="nb-text">Back to Home</span>
+          </a>
+        </div>
+        <div class="chapter-dots">
+          <span class="ch-dot active">1</span>
+          <span class="ch-dot">2</span>
+          <span class="ch-dot">3</span>
+        </div>
+        <div class="nav-next">
+          <a href="chapter2.html" class="nav-btn nb-next">
+            <span class="nb-text">Chapter 2</span>
+            <span class="nb-icon">▶️</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="chapter-footer">
+    <div class="footer-characters">
+      <span>🦄</span>
+      <span>🌈</span>
+      <span>⭐</span>
+      <span>🐸</span>
+      <span>🦋</span>
+    </div>
+    <p>Aumazing - Helping children learn and grow! 🌟</p>
+  </footer>
+
+  <script src="js/script2.js"></script>
+</body>
+</html>

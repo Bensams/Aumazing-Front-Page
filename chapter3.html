@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Chapter 3 — Aumazing</title>
+  <link rel="stylesheet" href="css/style2.css" />
+  <link rel="stylesheet" href="css/chapter.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Fredoka+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="net-canvas" class="net-canvas" aria-hidden="true"></canvas>
+
+  <div class="bg-shapes" aria-hidden="true">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+    <div class="shape s6"></div>
+    <div class="shape s7"></div>
+    <div class="shape s8"></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="assets/images/Aumazing_Logo.png" alt="Aumazing Logo" class="nav-logo-img" />
+      <span>Aumazing</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Chapters <span class="drop-arrow">▼</span></a>
+        <div class="dropdown-content">
+          <a href="chapter1.html"><span class="ch-icon">1️⃣</span> Chapter 1</a>
+          <a href="chapter2.html"><span class="ch-icon">2️⃣</span> Chapter 2</a>
+          <a href="chapter3.html"><span class="ch-icon">3️⃣</span> Chapter 3</a>
+        </div>
+      </li>
+      <li><a href="index.html#cta" class="nav-pill">Let's Go! 🚀</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="chapter-hero ch3-hero">
+    <div class="chapter-badge">Chapter 3</div>
+    <div class="chapter-emoji">⚙️</div>
+    <h1>Methodology</h1>
+    <p>Discover how Aumazing is built - the technology and process</p>
+    <div class="chapter-stars">
+      <span>⭐</span><span>⭐</span><span>⭐</span>
+    </div>
+  </section>
+
+  <section class="chapter-content">
+    <div class="content-container">
+      
+      <div class="lesson-card lesson-cyan">
+        <div class="lesson-icon">📋</div>
+        <div class="lesson-text">
+          <h3>3.1 How We Build Aumazing</h3>
+          <p>We use <strong>Agile-Kanban</strong> - a smart way to build apps step by step!</p>
+          <p style="margin-top: 16px;"><strong>Our 5 Steps (Kanban Board):</strong></p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px;">
+            <div style="background: rgba(100,100,100,0.2); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">📝 Backlog</div>
+            <div style="background: rgba(255,214,10,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--yellow);">📋 To Do</div>
+            <div style="background: rgba(0,229,255,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--cyan);">🔨 Doing</div>
+            <div style="background: rgba(155,93,229,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--purple);">🧪 Testing</div>
+            <div style="background: rgba(6,214,160,0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--green);">✅ Done</div>
+          </div>
+          <p style="margin-top: 16px;"><strong>Why this works:</strong></p>
+          <ul style="list-style: none; padding: 0;">
+            <li>✓ Can change things while building</li>
+            <li>✓ Test each part as we go</li>
+            <li>✓ See progress clearly</li>
+            <li>✓ Focus on one thing at a time</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-yellow">
+        <div class="lesson-icon">📱</div>
+        <div class="lesson-text">
+          <h3>3.2 App Technology</h3>
+          <p><strong>🎮 Flutter + Flame</strong></p>
+          <p style="opacity: 0.85;">For making games and screens that work on phones and tablets!</p>
+          
+          <p style="margin-top: 16px;"><strong>🗄️ Supabase</strong></p>
+          <p style="opacity: 0.85;">For storing all the important data safely in the cloud!</p>
+          
+          <p style="margin-top: 16px;"><strong>💾 SQLite</strong></p>
+          <p style="opacity: 0.85;">For playing games even when there's no internet!</p>
+          
+          <p style="margin-top: 16px;"><strong>🤖 Python + FastAPI + XGBoost</strong></p>
+          <p style="opacity: 0.85;">For the smart AI that checks how kids are doing!</p>
+          
+          <p style="margin-top: 16px;"><strong>📹 Jitsi Meet</strong></p>
+          <p style="opacity: 0.85;">For video calls with therapists (Premium feature)!</p>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-pink">
+        <div class="lesson-icon">👨‍👩‍👧</div>
+        <div class="lesson-text">
+          <h3>3.3 User Requirements</h3>
+          <p><strong>What parents need:</strong></p>
+          <ul style="list-style: none; padding: 0; margin-top: 8px;">
+            <li style="margin-bottom: 8px;">🔐 Sign up and log in safely</li>
+            <li style="margin-bottom: 8px;">👶 Create a profile for their child</li>
+            <li style="margin-bottom: 8px;">📊 See their child's progress</li>
+            <li style="margin-bottom: 8px;">⏰ Set screen time limits</li>
+            <li>📹 Connect with therapists (Premium)</li>
+          </ul>
+          <p style="margin-top: 16px;"><strong>What children need:</strong></p>
+          <ul style="list-style: none; padding: 0; margin-top: 8px;">
+            <li>🎮 Fun, colorful games</li>
+            <li>📷 Clear visual guides</li>
+            <li>🏆 Rewards for completing tasks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-purple">
+        <div class="lesson-icon">🎯</div>
+        <div class="lesson-text">
+          <h3>3.4 Features List</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+            <div style="background: rgba(0,229,255,0.1); padding: 12px; border-radius: 8px;">
+              <strong>Core Features:</strong>
+              <ul style="margin-top: 8px; padding-left: 16px;">
+                <li>User registration/login</li>
+                <li>Child profile management</li>
+                <li>Pre-assessment quiz</li>
+                <li>2D learning games</li>
+                <li>Level progression</li>
+                <li>Post-assessment</li>
+                <li>Parent dashboard</li>
+              </ul>
+            </div>
+            <div style="background: rgba(155,93,229,0.1); padding: 12px; border-radius: 8px;">
+              <strong>Special Features:</strong>
+              <ul style="margin-top: 8px; padding-left: 16px;">
+                <li>AI assessment (XGBoost)</li>
+                <li>Smart recommendations</li>
+                <li>Screen time control</li>
+                <li>Progress tracking</li>
+                <li>Offline play (SQLite)</li>
+                <li>Therapy directory</li>
+                <li>Video conferencing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-orange">
+        <div class="lesson-icon">💻</div>
+        <div class="lesson-text">
+          <h3>3.5 Hardware Needed</h3>
+          <p><strong>For Development:</strong></p>
+          <ul style="list-style: none; padding: 0; margin-top: 8px;">
+            <li>💻 Laptop/computer</li>
+            <li>📱 Android phone/tablet for testing</li>
+            <li>🌐 Internet connection</li>
+          </ul>
+          <p style="margin-top: 16px;"><strong>For Users:</strong></p>
+          <ul style="list-style: none; padding: 0; margin-top: 8px;">
+            <li>📱 Android or iOS phone/tablet</li>
+            <li>🌐 Internet (for most features)</li>
+            <li>💾 Storage space for the app</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-card lesson-green">
+        <div class="lesson-icon">✅</div>
+        <div class="lesson-text">
+          <h3>3.6 Is This Project Possible?</h3>
+          <p><strong>💰 Economically:</strong> Yes! Using free tools and student resources.</p>
+          <p style="margin-top: 12px;"><strong>🔧 Technically:</strong> Yes! All needed technologies exist and work well together.</p>
+          <p style="margin-top: 12px;"><strong>👨‍👩‍👧 For Families:</strong> Yes! It directly helps children with autism learn at home.</p>
+          <p style="margin-top: 12px;"><strong>📅 On Time:</strong> Yes! The 6-month plan (Feb-Sep 2026) is doable.</p>
+        </div>
+      </div>
+
+      <div class="completion-card">
+        <div class="completion-icon">🎊</div>
+        <h2>Aumazing Capstone Complete!</h2>
+        <p>You've learned how Aumazing is built! Built with research, designed with love for children with autism. 🌟</p>
+        <div class="completion-stars">
+          <span>🏆</span><span>⭐</span><span>🌟</span><span>⭐</span><span>🏆</span>
+        </div>
+        <a href="index.html" class="btn-back-home">
+          <span>Back to Home</span>
+          <span>🏠</span>
+        </a>
+      </div>
+
+      <div class="chapter-navigation">
+        <div class="nav-prev">
+          <a href="chapter2.html" class="nav-btn nb-prev">
+            <span class="nb-icon">◀️</span>
+            <span class="nb-text">Chapter 2</span>
+          </a>
+        </div>
+        <div class="chapter-dots">
+          <span class="ch-dot">1</span>
+          <span class="ch-dot">2</span>
+          <span class="ch-dot active">3</span>
+        </div>
+        <div class="nav-next">
+          <a href="index.html" class="nav-btn nb-home">
+            <span class="nb-text">Home</span>
+            <span class="nb-icon">🏠</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="chapter-footer">
+    <div class="footer-characters">
+      <span>🦄</span>
+      <span>🌈</span>
+      <span>⭐</span>
+      <span>🐸</span>
+      <span>🦋</span>
+    </div>
+    <p>Aumazing - More than an app, it's a helping hand! ✨</p>
+  </footer>
+
+  <script src="js/script2.js"></script>
+</body>
+</html>
