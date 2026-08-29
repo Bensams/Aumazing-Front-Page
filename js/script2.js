@@ -383,3 +383,62 @@ setInterval(() => {
     lb.style.transition = 'background 0.5s ease';
   });
 }, 1800);
+
+/* ===========================
+   LATEST ANDROID RELEASE
+   Uses GitHub's public API to keep the website's
+   direct APK download updated automatically.
+=========================== */
+const RELEASES_API = 'https://api.github.com/repos/Bensams/Aumazing/releases?per_page=10';
+
+function formatFileSize(bytes) {
+  if (!Number.isFinite(bytes) || bytes <= 0) return 'APK';
+  const megabytes = bytes / (1024 * 1024);
+  return `APK · ${megabytes.toFixed(1)} MB`;
+}
+
+async function loadLatestAndroidRelease() {
+  const button = document.getElementById('download-button');
+  const badge = document.getElementById('release-badge');
+  const name = document.getElementById('release-name');
+  const details = document.getElementById('release-details');
+  const size = document.getElementById('download-size');
+
+  if (!button || !badge || !name || !details || !size) return;
+
+  try {
+    const response = await fetch(RELEASES_API, {
+      headers: { Accept: 'application/vnd.github+json' }
+    });
+    if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+
+    const releases = await response.json();
+    const release = releases.find(item =>
+      !item.draft && item.assets.some(asset => asset.name.toLowerCase().endsWith('.apk'))
+    );
+    const asset = release?.assets.find(item => item.name.toLowerCase().endsWith('.apk'));
+
+    if (!release || !asset) throw new Error('No downloadable Android release found');
+
+    const published = new Date(release.published_at);
+    const publishedText = Number.isNaN(published.getTime())
+      ? release.tag_name
+      : `${release.tag_name} · ${published.toLocaleDateString(undefined, {
+          year: 'numeric', month: 'short', day: 'numeric'
+        })}`;
+
+    button.href = asset.browser_download_url;
+    button.setAttribute('download', asset.name);
+    badge.textContent = release.prerelease ? 'Preview release' : 'Latest release';
+    name.textContent = release.name || release.tag_name;
+    details.textContent = publishedText;
+    size.textContent = formatFileSize(asset.size);
+  } catch (error) {
+    // The HTML already contains a working direct-download fallback.
+    badge.textContent = 'Download ready';
+    details.textContent = 'v1.0.0-run1 · direct APK download';
+    console.warn('Could not check the latest GitHub release:', error.message);
+  }
+}
+
+loadLatestAndroidRelease();
