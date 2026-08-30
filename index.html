@@ -46,6 +46,7 @@
       </li>
       <li><a href="#about">About</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="#scoring">Scoring</a></li>
       <li><a href="#steps">Testing Guide</a></li>
 
       <li><a href="#cta" class="nav-pill">Download App ⬇️</a></li>
@@ -322,6 +323,131 @@
           <div class="feat-tag">Testing Evidence</div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="scoring-section" id="scoring">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">Published Rubric</div>
+        <h2>How the <span class="stroke-text">Scoring Works</span></h2>
+        <p class="scoring-intro">
+          These rules are verified against Aumazing <strong>v1.1.0-run3</strong>. They explain the
+          deterministic educational rubric that converts recorded gameplay into skill bands and a
+          priority-based module recommendation. They are not medical criteria and cannot diagnose ASD.
+        </p>
+      </div>
+
+      <div class="rubric-notice reveal">
+        <div class="rubric-notice-icon" aria-hidden="true">🔎</div>
+        <div>
+          <strong>What “published rules” means</strong>
+          <p>
+            Percentages below are the release defaults and offline fallback values. Authorized administrators
+            can configure accuracy, completion, prompt-dependency, turn-taking, and idle-time cutoffs, so an
+            actively configured installation may use different values. Retry, interruption, and random-touch
+            limits shown here are fixed in this release.
+          </p>
+        </div>
+      </div>
+
+      <div class="rubric-domain-grid">
+        <article class="rubric-card rc-cyan reveal">
+          <div class="rubric-card-heading">
+            <span aria-hidden="true">🧩</span>
+            <div><small>Match It + Copy Me</small><h3>Play Skills</h3></div>
+          </div>
+          <div class="rubric-band band-strength"><strong>Strength</strong><span>Accuracy ≥ 80% AND completion ≥ 80% AND prompt dependency ≤ 20% AND average retries ≤ 2</span></div>
+          <div class="rubric-band band-emerging"><strong>Emerging</strong><span>Accuracy ≥ 50% OR completion ≥ 50%</span></div>
+          <div class="rubric-band band-support"><strong>Needs Support</strong><span>Everything else</span></div>
+        </article>
+
+        <article class="rubric-card rc-yellow reveal">
+          <div class="rubric-card-heading">
+            <span aria-hidden="true">💬</span>
+            <div><small>Copy Me + Do What I Say</small><h3>Communication</h3></div>
+          </div>
+          <div class="rubric-band band-strength"><strong>Strength</strong><span>Accuracy ≥ 80% AND prompt dependency ≤ 20%</span></div>
+          <div class="rubric-band band-emerging"><strong>Emerging</strong><span>Neither Strength nor Needs Support</span></div>
+          <div class="rubric-band band-support"><strong>Needs Support</strong><span>Accuracy &lt; 50% OR prompt dependency ≥ 50%</span></div>
+        </article>
+
+        <article class="rubric-card rc-pink reveal">
+          <div class="rubric-card-heading">
+            <span aria-hidden="true">🤝</span>
+            <div><small>My Turn, Your Turn</small><h3>Social Interaction</h3></div>
+          </div>
+          <div class="rubric-band band-strength"><strong>Strength</strong><span>Turn-taking success ≥ 80% AND average interruptions ≤ 2</span></div>
+          <div class="rubric-band band-emerging"><strong>Emerging</strong><span>Neither Strength nor Needs Support</span></div>
+          <div class="rubric-band band-support"><strong>Needs Support</strong><span>Turn-taking success &lt; 50% OR average interruptions &gt; 5</span></div>
+        </article>
+
+        <article class="rubric-card rc-purple reveal">
+          <div class="rubric-card-heading">
+            <span aria-hidden="true">🎯</span>
+            <div><small>All valid game sessions</small><h3>Behavior &amp; Attention</h3></div>
+          </div>
+          <div class="rubric-band band-strength"><strong>Sustained</strong><span>Average idle time ≤ 5s AND random touches ≤ 2 AND completion ≥ 80%</span></div>
+          <div class="rubric-band band-emerging"><strong>Variable</strong><span>Average idle time ≤ 15s AND random touches ≤ 5 AND completion ≥ 50%</span></div>
+          <div class="rubric-band band-support"><strong>Needs Support</strong><span>Everything else</span></div>
+        </article>
+      </div>
+
+      <div class="rubric-explainer-grid">
+        <article class="rubric-explainer reveal">
+          <div class="rubric-explainer-title"><span aria-hidden="true">🧮</span><h3>How the Inputs Are Calculated</h3></div>
+          <ul>
+            <li><strong>Accuracy:</strong> average of <code>score ÷ total items</code> across relevant sessions.</li>
+            <li><strong>Completion:</strong> average recorded completion rate; accuracy is used when completion is unavailable.</li>
+            <li><strong>Prompt dependency:</strong> average recorded dependency score; <code>prompts ÷ total items</code> is the fallback.</li>
+            <li><strong>Turn-taking:</strong> average recorded success rate; accuracy is the fallback.</li>
+            <li>Sessions with zero total items are excluded. With no valid sessions—or after an unexpected scoring error—the safe result is Emerging or Variable Attention.</li>
+          </ul>
+        </article>
+
+        <article class="rubric-explainer reveal">
+          <div class="rubric-explainer-title"><span aria-hidden="true">🎵</span><h3>Sensory Preference Rule</h3></div>
+          <p class="rubric-formula"><code>performance = 60% accuracy + 40% response speed</code></p>
+          <p>
+            Response time is normalized against 5 seconds. Each music, haptic, or combined condition is compared
+            with the baseline: a change of at least <strong>+10%</strong> is treated as helpful, while
+            <strong>−10%</strong> or lower is treated as a reason to avoid that condition. If no baseline exists,
+            the result is “No Sensory Support Needed.”
+          </p>
+        </article>
+      </div>
+
+      <article class="recommendation-rules reveal">
+        <div class="recommendation-heading">
+          <div><span aria-hidden="true">🧭</span><h3>How My Path Chooses a Module</h3></div>
+          <p>The first matching rule wins, in this exact order:</p>
+        </div>
+        <ol class="recommendation-list">
+          <li><span>1</span><div><strong>All four areas are at their highest band</strong><small>Advanced Practice Module</small></div></li>
+          <li><span>2</span><div><strong>Three or more areas need support</strong><small>Mixed Support Module</small></div></li>
+          <li><span>3</span><div><strong>Communication needs support</strong><small>Communication Starter Module</small></div></li>
+          <li><span>4</span><div><strong>Social interaction needs support</strong><small>Turn-taking Starter Module</small></div></li>
+          <li><span>5</span><div><strong>Play skills need support</strong><small>Play Skills Starter Module</small></div></li>
+          <li><span>6</span><div><strong>Attention needs support</strong><small>Attention Support Module</small></div></li>
+          <li><span>7</span><div><strong>No earlier rule matches</strong><small>Foundation Skills Module</small></div></li>
+        </ol>
+      </article>
+
+      <div class="rubric-source reveal">
+        <strong>Review the implementation</strong>
+        <p>
+          Practitioners and technical reviewers can compare this explanation with the versioned source files.
+          These labels describe game performance only—not autism severity, treatment need, or developmental change.
+        </p>
+        <div class="rubric-source-links">
+          <a href="https://github.com/Bensams/Aumazing/blob/v1.1.0-run3/apps/main_app/lib/services/rubric/rubric_scoring_service.dart"
+            target="_blank" rel="noopener noreferrer">Scoring source ↗</a>
+          <a href="https://github.com/Bensams/Aumazing/blob/v1.1.0-run3/apps/main_app/lib/services/rubric/recommendation_service.dart"
+            target="_blank" rel="noopener noreferrer">Recommendation source ↗</a>
+          <a href="https://github.com/Bensams/Aumazing/blob/v1.1.0-run3/apps/main_app/lib/services/rubric/sensory_label_analyzer.dart"
+            target="_blank" rel="noopener noreferrer">Sensory source ↗</a>
+        </div>
       </div>
     </div>
   </section>

@@ -1489,6 +1489,242 @@ body {
 }
 
 /* ===========================
+   PUBLISHED SCORING RUBRIC
+=========================== */
+.scoring-section {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  z-index: 1;
+}
+
+.scoring-intro {
+  max-width: 850px;
+  margin: 14px auto 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.scoring-intro strong { color: var(--cyan); }
+
+.rubric-notice,
+.rubric-source {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding: 22px 24px;
+  border: 1px solid rgba(0,229,255,0.23);
+  border-radius: var(--radius);
+  background: rgba(0,229,255,0.05);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.28);
+}
+
+.rubric-notice-icon { flex: 0 0 auto; font-size: 1.8rem; }
+
+.rubric-notice strong,
+.rubric-source strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--white);
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+}
+
+.rubric-notice p,
+.rubric-source p {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.rubric-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.rubric-card,
+.rubric-explainer,
+.recommendation-rules {
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.035);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.3);
+}
+
+.rubric-card { padding: 24px; }
+.rc-cyan { border-color: rgba(0,229,255,0.27); }
+.rc-yellow { border-color: rgba(255,214,10,0.27); }
+.rc-pink { border-color: rgba(255,45,120,0.27); }
+.rc-purple { border-color: rgba(155,93,229,0.3); }
+
+.rubric-card-heading,
+.rubric-explainer-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rubric-card-heading > span,
+.rubric-explainer-title > span { font-size: 1.65rem; }
+
+.rubric-card-heading small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rubric-card h3,
+.rubric-explainer h3,
+.recommendation-rules h3 {
+  color: var(--white);
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.12rem;
+}
+
+.rubric-band {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.rubric-band strong { font-size: 0.79rem; }
+.rubric-band span { color: var(--muted); font-size: 0.8rem; line-height: 1.55; }
+.band-strength strong { color: #5fffd8; }
+.band-emerging strong { color: #ffe85a; }
+.band-support strong { color: #ff7aab; }
+
+.rubric-explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.rubric-explainer { padding: 24px; }
+
+.rubric-explainer ul {
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.rubric-explainer li + li { margin-top: 7px; }
+.rubric-explainer strong { color: var(--text); }
+.rubric-explainer p { color: var(--muted); font-size: 0.83rem; line-height: 1.68; }
+.rubric-explainer code {
+  padding: 2px 5px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  background: rgba(0,0,0,0.25);
+  color: var(--cyan);
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.rubric-formula {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(155,93,229,0.1);
+  text-align: center;
+}
+
+.recommendation-rules {
+  margin-top: 18px;
+  padding: 24px;
+}
+
+.recommendation-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.recommendation-heading > div { display: flex; align-items: center; gap: 10px; }
+.recommendation-heading > div > span { font-size: 1.7rem; }
+.recommendation-heading p { color: var(--muted); font-size: 0.8rem; }
+
+.recommendation-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+}
+
+.recommendation-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.025);
+}
+
+.recommendation-list li > span {
+  display: grid;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  color: var(--dark);
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.78rem;
+}
+
+.recommendation-list strong { display: block; color: var(--text); font-size: 0.8rem; }
+.recommendation-list small { display: block; margin-top: 2px; color: var(--cyan); font-size: 0.72rem; }
+
+.rubric-source {
+  display: block;
+  margin: 18px 0 0;
+  border-color: rgba(6,214,160,0.25);
+  background: rgba(6,214,160,0.045);
+}
+
+.rubric-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.rubric-source-links a {
+  display: inline-flex;
+  padding: 8px 13px;
+  border: 1px solid rgba(6,214,160,0.35);
+  border-radius: 999px;
+  background: rgba(6,214,160,0.1);
+  color: #5fffd8;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.rubric-source-links a:hover,
+.rubric-source-links a:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(6,214,160,0.18);
+}
+
+/* ===========================
    HOW IT WORKS (STEPS)
 =========================== */
 .steps-section {
@@ -2035,6 +2271,7 @@ body {
   .preview-section,
   .chapters-nav-section,
   .features-section,
+  .scoring-section,
   .steps-section,
   .who-section,
   .cta-section { padding: 80px 0; }
@@ -2128,6 +2365,12 @@ body {
   /* Features */
   .features-grid { grid-template-columns: 1fr; gap: 16px; }
 
+  /* Scoring */
+  .rubric-domain-grid,
+  .rubric-explainer-grid,
+  .recommendation-list { grid-template-columns: 1fr; }
+  .recommendation-heading { align-items: flex-start; flex-direction: column; }
+
   /* Steps */
   .step-block { flex: 0 0 100%; }
   .testing-track { grid-template-columns: 1fr; }
@@ -2184,6 +2427,15 @@ body {
 
   /* Features */
   .feat-card { padding: 22px 18px; }
+
+  /* Scoring */
+  .rubric-card,
+  .rubric-explainer,
+  .recommendation-rules { padding: 20px 16px; }
+  .rubric-notice { flex-direction: column; padding: 20px; }
+  .rubric-band { grid-template-columns: 1fr; gap: 5px; }
+  .rubric-source-links { flex-direction: column; align-items: stretch; }
+  .rubric-source-links a { justify-content: center; text-align: center; }
 
   /* Who */
   .who-grid { grid-template-columns: 1fr; }
