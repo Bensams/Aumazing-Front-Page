@@ -1655,6 +1655,12 @@ body {
   border: 1px solid rgba(155,93,229,0.24);
 }
 
+.survey-card-client {
+  grid-column: 1 / -1;
+  background: rgba(255,209,0,0.06);
+  border: 1px solid rgba(255,209,0,0.25);
+}
+
 .survey-card-icon {
   flex: 0 0 auto;
   font-size: 1.8rem;
@@ -1693,6 +1699,25 @@ body {
   border: 1px dashed rgba(155,93,229,0.5);
   background: rgba(155,93,229,0.12);
   color: #c9a8ff;
+}
+
+.client-email-link {
+  border-color: rgba(255,209,0,0.45);
+  background: rgba(255,209,0,0.13);
+  color: var(--yellow);
+}
+
+.client-email-link:hover,
+.client-email-link:focus-visible {
+  background: rgba(255,209,0,0.22);
+}
+
+.client-email {
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
 }
 
 .step-arrow {
