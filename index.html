@@ -48,8 +48,11 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#scoring">Scoring</a></li>
       <li><a href="#steps">Testing Guide</a></li>
+      <li><a href="#reviews">Reviews</a></li>
 
+      <li><a href="app/" class="nav-pill nav-pill-alt">Try in Browser 🌐</a></li>
       <li><a href="#cta" class="nav-pill">Download App ⬇️</a></li>
+
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -89,6 +92,7 @@
       </p>
 
       <div class="hero-btns pop">
+        <a href="app/" class="btn-chunky btn-pink">Try in Browser 🌐</a>
         <a href="#preview" class="btn-chunky btn-cyan">Watch Preview 🎬</a>
         <a href="#steps" class="btn-chunky btn-yellow">Testing Guide 🧪</a>
       </div>
@@ -593,6 +597,63 @@
     </div>
   </section>
 
+  <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+    <div class="section-wrap">
+      <div class="section-heading reveal">
+        <div class="heading-block">Community Signal</div>
+        <h2 id="reviews-title">What People <span class="stroke-text">Say</span></h2>
+        <p class="reviews-intro">Share what worked, what felt clear, or what we can improve. Reviews are anonymous by default and published only after moderation.</p>
+      </div>
+
+      <div class="reviews-summary reveal" aria-live="polite">
+        <div class="review-stat"><strong id="reviews-average">0.0</strong><span>Average rating</span></div>
+        <div class="review-stat"><strong id="reviews-count">0</strong><span>Approved reviews</span></div>
+        <div class="review-stat review-stat-stars"><strong id="reviews-stars" role="img" aria-label="No approved ratings yet">☆☆☆☆☆</strong><span>Community rating</span></div>
+        <p>Only approved reviews are shown. Please never include a child's name or identifying information.</p>
+      </div>
+
+      <div class="reviews-layout">
+        <div class="reviews-list-panel reveal">
+          <div id="reviews-list-state" class="reviews-state" role="status" aria-live="polite">Loading approved reviews…</div>
+          <div id="reviews-list" class="reviews-list" aria-live="polite"></div>
+        </div>
+
+        <form class="review-form reveal" id="review-form" novalidate>
+          <h3>Leave a review</h3>
+          <p class="review-form-lead">No account or real name is required. Your review will be pending until a project administrator approves it.</p>
+          <div class="form-field">
+            <label for="review-name">Display name <span>(optional)</span></label>
+            <input id="review-name" name="display_name" type="text" maxlength="80" autocomplete="nickname" placeholder="Anonymous reviewer" />
+          </div>
+          <fieldset class="form-field rating-field">
+            <legend>Rating <span class="required-mark">*</span></legend>
+            <div class="star-selector" role="radiogroup" aria-label="Choose a rating from one to five stars">
+              <button type="button" class="star-button" data-review-rating="1" role="radio" aria-label="1 star" aria-checked="false">★</button>
+              <button type="button" class="star-button" data-review-rating="2" role="radio" aria-label="2 stars" aria-checked="false">★</button>
+              <button type="button" class="star-button" data-review-rating="3" role="radio" aria-label="3 stars" aria-checked="false">★</button>
+              <button type="button" class="star-button" data-review-rating="4" role="radio" aria-label="4 stars" aria-checked="false">★</button>
+              <button type="button" class="star-button" data-review-rating="5" role="radio" aria-label="5 stars" aria-checked="false">★</button>
+            </div>
+            <input id="review-rating" name="rating" type="hidden" value="" required />
+          </fieldset>
+          <div class="form-field">
+            <label for="review-comment">Comment <span class="required-mark">*</span></label>
+            <textarea id="review-comment" name="comment" rows="5" maxlength="1000" required placeholder="Tell us about your experience..."></textarea>
+            <div id="review-counter" class="review-counter" aria-live="polite">0/1000</div>
+          </div>
+          <div class="review-honeypot" aria-hidden="true">
+            <label for="review-website">Website</label>
+            <input id="review-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <p id="review-captcha-note" class="review-captcha-note" role="status" hidden></p>
+          <p id="review-form-status" class="review-form-status" role="status" aria-live="polite"></p>
+          <button id="review-submit" class="btn-chunky btn-cyan review-submit" type="submit">Submit for moderation</button>
+          <p class="review-privacy">Privacy note: use only general feedback. Do not share names, contact details, or health information.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section" id="cta">
     <div class="cta-inner">
       <div class="cta-deco deco-left">🌟</div>
@@ -650,6 +711,7 @@
   </footer>
 
   <script src="js/script2.js"></script>
+  <script type="module" src="js/reviews.js"></script>
 </body>
 
 </html>
