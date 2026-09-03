@@ -1,4 +1,3 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm';
 import {
   CAPTCHA,
   REVIEWS_COOLDOWN_MS,
@@ -8,9 +7,23 @@ import {
   SUPABASE_URL
 } from './supabase-config.js';
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
-  auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-});
+// The Supabase client is loaded lazily from the CDN. Keeping this out of the
+// module's top-level import means a slow/blocked CDN can never stop the form's
+// UI (star selector, validation, counter) from wiring up — only the actual
+// network calls depend on it, and they handle their own failures.
+let supabaseClientPromise = null;
+async function getSupabase() {
+  if (!supabaseClientPromise) {
+    supabaseClientPromise = import(
+      'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm'
+    ).then(({ createClient }) =>
+      createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+      })
+    );
+  }
+  return supabaseClientPromise;
+}
 
 const byId = id => document.getElementById(id);
 const stars = '★★★★★';
@@ -40,7 +53,8 @@ function makeReviewCard(review) {
   date.textContent = Number.isNaN(parsedDate.getTime())
     ? 'Recently shared'
     : parsedDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
-...
+  header.append(name, date);
+
   const rating = document.createElement('div');
   rating.className = 'review-rating';
   rating.setAttribute('role', 'img');
@@ -61,6 +75,7 @@ function renderReviews(container, reviews) {
 }
 
 async function ensureAnonymousSession() {
+  const supabase = await getSupabase();
   const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
   if (sessionError) throw sessionError;
   if (sessionData.session) return sessionData.session;
@@ -90,6 +105,7 @@ function withTimeout(promise) {
 async function loadApprovedReviews(elements) {
   setState(elements.listState, 'Loading approved reviews…', 'loading');
   try {
+    const supabase = await getSupabase();
     const { data, error, count } = await withTimeout(supabase
       .from(REVIEWS_TABLE)
       .select('display_name, rating, comment, created_at', { count: 'exact' })
@@ -141,22 +157,33 @@ function initReviews() {
     counter: byId('review-counter'),
     honeypot: byId('review-website')
   };
+  const starSelector = form.querySelector('.star-selector');
   const starButtons = [...form.querySelectorAll('[data-review-rating]')];
   let isSubmitting = false;
+  let currentRating = 0;
 
   const updateCounter = () => {
     elements.counter.textContent = `${elements.comment.value.length}/${REVIEWS_MAX_COMMENT_LENGTH}`;
   };
-  const selectRating = value => {
-    elements.rating.value = String(value);
+  // Fill every star up to (and including) `value`; 0 clears them all.
+  const paintStars = value => {
     starButtons.forEach(button => {
-      const selected = Number(button.dataset.reviewRating) <= value;
-      button.classList.toggle('is-selected', selected);
+      button.classList.toggle('is-selected', Number(button.dataset.reviewRating) <= value);
+    });
+  };
+  const selectRating = value => {
+    currentRating = value;
+    elements.rating.value = value ? String(value) : '';
+    paintStars(value);
+    starButtons.forEach(button => {
       button.setAttribute('aria-checked', String(Number(button.dataset.reviewRating) === value));
     });
   };
   starButtons.forEach(button => {
-    button.addEventListener('click', () => selectRating(Number(button.dataset.reviewRating)));
+    const value = Number(button.dataset.reviewRating);
+    button.addEventListener('click', () => selectRating(value));
+    // Preview the fill on hover, then snap back to the committed rating.
+    button.addEventListener('mouseenter', () => paintStars(value));
     button.addEventListener('keydown', event => {
       const current = Number(elements.rating.value) || 0;
       let next = current;
@@ -169,6 +196,9 @@ function initReviews() {
       }
     });
   });
+  if (starSelector) {
+    starSelector.addEventListener('mouseleave', () => paintStars(currentRating));
+  }
   elements.comment.addEventListener('input', updateCounter);
   updateCounter();
   selectRating(0);
@@ -206,6 +236,7 @@ function initReviews() {
     elements.submit.disabled = true;
     setState(elements.status, 'Sending your review securely…', 'loading');
     try {
+      const supabase = await getSupabase();
       const session = await ensureAnonymousSession();
       if (!session?.user?.id) throw new Error('Anonymous sign-in did not return a user');
       const { error } = await supabase.from(REVIEWS_TABLE).insert({
