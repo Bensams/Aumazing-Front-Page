@@ -5,7 +5,7 @@ import {
   REVIEWS_TABLE,
   SUPABASE_PUBLISHABLE_KEY,
   SUPABASE_URL
-} from './supabase-config.js';
+} from './supabase-config.js?v=2';
 
 // The Supabase client is loaded lazily from the CDN. Keeping this out of the
 // module's top-level import means a slow/blocked CDN can never stop the form's
