@@ -2283,6 +2283,68 @@ body {
    RESPONSIVE
 =========================== */
 
+/* ---------- 1440px: Short desktops — tighten nav so it still fits ---------- */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .navbar        { padding: 10px 24px; }
+  .nav-logo      { font-size: 1.3rem; }
+  .nav-logo-img  { width: 48px; height: 48px; }
+  .nav-links     { gap: 18px; }
+  .nav-links a   { font-size: 0.86rem; }
+  .nav-pill      { padding: 8px 16px !important; font-size: 0.82rem !important; }
+}
+
+/* ---------- 1200px: Tablets (incl. every iPad width) — collapse nav to drawer.
+   The horizontal bar needs ~1270px for the logo, 7 links and 2 pills, so it must
+   become a drawer well above the phone breakpoint or it overflows the viewport. */
+@media (max-width: 1200px) {
+  .navbar { padding: 10px 24px; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(18,16,30,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 28px 26px;
+    gap: 16px;
+    border-bottom: 3px solid rgba(255,255,255,0.1);
+    max-height: calc(100vh - 100%);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 99;
+  }
+  .nav-links.open  { display: flex; }
+  .nav-links > li  { width: 100%; }
+  .nav-links a     { display: block; font-size: 1.05rem; padding: 4px 0; }
+  .hamburger       { display: flex; }
+
+  /* Dropdown becomes an accordion; :hover is not reliable on touch. */
+  .dropdown { display: block; width: 100%; }
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    animation: none;
+  }
+  .dropdown:hover .dropdown-content  { display: none; }
+  .dropdown.open  .dropdown-content  { display: block; }
+  .dropdown:hover .drop-arrow        { transform: none; }
+  .dropdown.open  .drop-arrow        { transform: rotate(180deg); }
+  .dropdown-content a:hover          { padding-left: 18px !important; }
+
+  /* Pills stack full width instead of clipping off the right edge. */
+  .nav-pill {
+    display: block !important;
+    text-align: center;
+    padding: 12px 22px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
 /* ---------- 1024px: Tablets landscape ---------- */
 @media (max-width: 1024px) {
   /* Sections */
@@ -2318,14 +2380,6 @@ body {
 
 /* ---------- 768px: Tablets portrait & large phones ---------- */
 @media (max-width: 768px) {
-  /* Dropdown */
-  .dropdown-content {
-    position: static;
-    width: 100%;
-    margin-top: 8px;
-    border-radius: 8px;
-  }
-
   /* Intro Section */
   .intro-section { padding: 100px 16px 60px; }
   .intro-cards { grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -2336,22 +2390,9 @@ body {
   .btn-start { font-size: 1.1rem; padding: 14px 32px; }
   .char { font-size: 2rem; }
 
-  /* Navbar */
+  /* Navbar — drawer behaviour lives in the 1200px tier above. */
   .navbar { padding: 10px 20px; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: rgba(18,16,30,0.98);
-    flex-direction: column;
-    padding: 24px 28px;
-    gap: 20px;
-    border-bottom: 3px solid rgba(255,255,255,0.1);
-    z-index: 99;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a    { font-size: 1.1rem; }
-  .hamburger      { display: flex; }
+  .nav-links { padding: 20px 24px 24px; }
 
   /* Hero */
   .hero { padding: 90px 20px 56px; min-height: auto; }
@@ -2431,7 +2472,20 @@ body {
   /* Hero */
   .hero { padding: 86px 16px 48px; }
   .hero-logo-img  { width: 180px; }
-  .hero-title     { gap: clamp(3px, 1.2vw, 8px); }
+  /* 8 letter blocks must fit the viewport. The base 56px minimum block overflows
+     below ~520px and clips the A and g, so size the block from the viewport instead:
+     (viewport - hero padding - safety) minus 7 gaps, split 8 ways, capped at 56px. */
+  .hero-title {
+    --hero-gap: 4px;
+    --hero-block: min(56px, calc((100vw - 44px - 7 * var(--hero-gap)) / 8));
+    gap: var(--hero-gap);
+  }
+  .block-letter {
+    width:  var(--hero-block);
+    height: var(--hero-block);
+    font-size: calc(var(--hero-block) * 0.6);
+    border-radius: calc(var(--hero-block) * 0.22);
+  }
   .hero-tagline   { gap: 8px; }
   .tag-block      { font-size: 0.8rem; padding: 6px 12px; }
   .hero-desc      { font-size: 0.9rem; }

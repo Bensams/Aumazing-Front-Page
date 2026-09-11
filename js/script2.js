@@ -189,23 +189,63 @@ window.addEventListener('scroll', () => {
     : 'rgba(18,16,30,0.85)';
 });
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+/* Must match the drawer breakpoint in style2.css. */
+const NAV_DRAWER_QUERY = window.matchMedia('(max-width: 1200px)');
+
+function setHamburgerIcon(open) {
   const spans = hamburger.querySelectorAll('span');
-  const open = navLinks.classList.contains('open');
   spans[0].style.transform = open ? 'rotate(45deg) translate(5px,6px)' : '';
   spans[1].style.opacity   = open ? '0' : '';
   spans[2].style.transform = open ? 'rotate(-45deg) translate(5px,-6px)' : '';
+}
+
+function closeNav() {
+  navLinks.classList.remove('open');
+  navLinks.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+  hamburger.setAttribute('aria-expanded', 'false');
+  setHamburgerIcon(false);
+}
+
+hamburger.setAttribute('aria-expanded', 'false');
+hamburger.addEventListener('click', () => {
+  const open = !navLinks.classList.contains('open');
+  navLinks.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  setHamburgerIcon(open);
+  if (!open) navLinks.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+});
+
+/* In the drawer, the Chapters parent toggles an accordion instead of navigating,
+   because :hover does not open it on a touch screen. */
+navLinks.querySelectorAll('.dropdown > .dropbtn').forEach(btn => {
+  const parent = btn.parentElement;
+  btn.addEventListener('click', e => {
+    if (!NAV_DRAWER_QUERY.matches) return;
+    e.preventDefault();
+    parent.classList.toggle('open');
+  });
 });
 
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.querySelectorAll('span').forEach(s => {
-      s.style.transform = '';
-      s.style.opacity = '';
-    });
+    if (a.classList.contains('dropbtn') && NAV_DRAWER_QUERY.matches) return;
+    closeNav();
   });
+});
+
+/* Leaving drawer widths must not leave the open drawer stuck over the page. */
+NAV_DRAWER_QUERY.addEventListener('change', e => {
+  if (!e.matches) closeNav();
+});
+
+document.addEventListener('click', e => {
+  if (!navLinks.classList.contains('open')) return;
+  if (navLinks.contains(e.target) || hamburger.contains(e.target)) return;
+  closeNav();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) closeNav();
 });
 
 /* ===========================
