@@ -35,8 +35,11 @@ if (!window._flutter) {
 }
 _flutter.buildConfig = {"engineRevision":"0cd610717bde95fd88343c64f81c11ba4e5c0010","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
+
+// Load CanvasKit from this build rather than Google's CDN, so the app still
+// starts when it is opened offline from the service worker's cache (AUM-334).
 _flutter.loader.load({
-  serviceWorkerSettings: {
-    serviceWorkerVersion: "1998590110" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */
-  }
+  config: {
+    canvasKitBaseUrl: 'canvaskit/',
+  },
 });
