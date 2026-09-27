@@ -1,5 +1,5 @@
 // Intercepts the "Try in Browser" links and shows a short heads-up modal
-// explaining that the in-browser app is a demo, before navigating into it.
+// explaining what to expect from the in-browser app, before navigating into it.
 (function () {
   const modal = document.getElementById('demo-modal');
   if (!modal) return;
