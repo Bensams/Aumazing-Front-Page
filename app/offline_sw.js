@@ -20,7 +20,7 @@
 //             child mid-game never has old and new files mixed under them.
 // - message:  the page asks for status or for every lazy file (offline.js).
 
-const VERSION = '465f85f856b76bda';
+const VERSION = '92a5bc495501d705';
 const CACHE_PREFIX = 'aumazing-offline-';
 const CACHE_NAME = CACHE_PREFIX + VERSION;
 const REV_HEADER = 'x-aumazing-rev';
