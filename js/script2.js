@@ -476,7 +476,7 @@ async function loadLatestAndroidRelease() {
   } catch (error) {
     // The HTML already contains a working direct-download fallback.
     badge.textContent = 'Download ready';
-    details.textContent = 'v1.0.0-run1 · direct APK download';
+    details.textContent = 'v1.4.0-run9 · direct APK download';
     console.warn('Could not check the latest GitHub release:', error.message);
   }
 }
