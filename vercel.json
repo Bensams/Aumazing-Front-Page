@@ -1,0 +1,9 @@
+{
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/app/offline_sw.js",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    }
+  ]
+}
