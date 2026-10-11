@@ -30,7 +30,7 @@
 // - message:  the loading page asks which build version is running, so it
 //             checks and fills that version's cache (offline.js).
 
-const VERSION = '6520c9965754d50d';
+const VERSION = '12bf24f29089605d';
 const CACHE_PREFIX = 'aumazing-offline-';
 const CACHE_NAME = CACHE_PREFIX + VERSION;
 const REV_HEADER = 'x-aumazing-rev';
